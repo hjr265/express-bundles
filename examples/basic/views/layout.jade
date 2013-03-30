@@ -1,0 +1,10 @@
+doctype 5
+html
+  head
+    title= title
+    for name in bundles.emit('css/combined.css')
+      link(rel='stylesheet', href='/#{name}')
+  body
+    block content
+    for name in bundles.emit('js/bundle.js')
+      script(src='/#{name}')
